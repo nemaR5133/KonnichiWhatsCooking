@@ -56,9 +56,9 @@ public class FolllowingCam : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.E)) 
+       // if(Input.GetKeyDown(KeyCode.E)) 
         {
-            StartShake(2, 2);
+            //StartShake(2, 2);
         }
     }
 }

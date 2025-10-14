@@ -492,6 +492,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PopUp1: {fileID: 5197447579701050037, guid: d83eca27287cb0145a942e9eccecb487, type: 3}
   CratePopPos1: {fileID: 41494487}
+  PopUp1Colne: {fileID: 0}
 --- !u!1 &1297868377
 GameObject:
   m_ObjectHideFlags: 0
@@ -569,7 +570,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 1026932835}
-  interpolationVal: 0.5
+  interpolationVal: 0.055
 --- !u!81 &1297868380
 AudioListener:
   m_ObjectHideFlags: 0
@@ -613,7 +614,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 7
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1190,6 +1191,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 12683127761659819, guid: bd9aac554b2f6464fa3f06c11903b26c, type: 3}
+      propertyPath: m_Mass
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 12683127761659819, guid: bd9aac554b2f6464fa3f06c11903b26c, type: 3}
+      propertyPath: m_LinearDrag
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 9207242926286471227, guid: bd9aac554b2f6464fa3f06c11903b26c, type: 3}
       propertyPath: m_Name
       value: Player
