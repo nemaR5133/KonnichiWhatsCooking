@@ -6,6 +6,13 @@ TagManager:
   tags:
   - ingredientPopUp
   - StoveGame
+  - UncookedRiceCrate
+  - BreadCrate
+  - EggCrate
+  - VegitibleCrate
+  - SeaweedCrate
+  - FishCrate
+  - UncutMochi
   layers:
   - Default
   - TransparentFX
