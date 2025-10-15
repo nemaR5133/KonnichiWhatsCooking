@@ -1,5 +1,15 @@
 using UnityEngine;
 
+/****************************************************
+*Function: main
+*
+*Description:
+*
+*Inputs:
+*
+*Outputs:
+* 
+****************************************************/
 public class PickUpIngredient : MonoBehaviour
 {
     bool ItemPickedUp = false;

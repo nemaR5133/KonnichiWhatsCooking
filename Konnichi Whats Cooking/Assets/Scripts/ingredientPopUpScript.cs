@@ -7,8 +7,7 @@ using UnityEngine;
  * Descriptoin: This script is for when the player walks up to a 
  * crate it will give them a E button prompt image Please set the 
  * image and were it Appears.
- * ***************************************************************
- */
+ ****************************************************************/
 public class ingredientPopUpScript : MonoBehaviour
 {
 
@@ -21,7 +20,17 @@ public class ingredientPopUpScript : MonoBehaviour
     //Checks if the era has been enter.
     bool CrateEntered = false;
 
-
+    /****************************************************
+     *Function: OnTriggerEnter2D
+     *
+     *Description: This function decteds if the player has entered the trigger
+     *Then the pop up wil appear.
+     *
+     *Inputs: Player Interaction- Player enters the trigger. Crate entered bool. 
+     *
+     *Outputs: Creates the prefab for pop up
+     * 
+     ****************************************************/
     //Checks if player enters Trigger
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -46,7 +55,16 @@ public class ingredientPopUpScript : MonoBehaviour
         
     }
 
-
+    /****************************************************
+     *Function: OnTriggerExit2D
+     *
+     *Description: Destroys pop up when player leaves.
+     *
+     *Inputs: Player Interaction- Player exiting trigger.
+     *
+     *Outputs: The pop up will be destroyed.
+     * 
+     ****************************************************/
     //Checks if trigger has been exited
     private void OnTriggerExit2D(Collider2D collision2)
     {

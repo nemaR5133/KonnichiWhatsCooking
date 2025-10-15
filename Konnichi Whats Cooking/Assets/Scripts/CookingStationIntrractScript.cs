@@ -5,11 +5,13 @@ using UnityEngine.UI;
  * Author: Dante Jones
  * Digipen Email: jones.d@digipen.edu
  * Course: GAM100
- * Descriptoin:
+ * Descriptoin: This is the script for nteratng with the cooking stations.
+ * And player can go up to them and press E to start the game.
  * 
  * 
  * ***************************************************************
  */
+
 public class CookingStationIntrractScript : MonoBehaviour
 {
     //This is the Image of the game
@@ -18,6 +20,17 @@ public class CookingStationIntrractScript : MonoBehaviour
     public Button CookingGameButton;
     //The Stove has not been touched check
     public bool StoveIsTouched = false;
+
+    /****************************************************
+    *Function: Start
+    *
+    *Description: First thing that runs. Sets the ui elements inactive.
+    *
+    *Inputs: Ui elements- The minigame in itself.
+    *
+    *Outputs: Turns ui elements off. Not active.
+    * 
+    ****************************************************/
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -26,6 +39,18 @@ public class CookingStationIntrractScript : MonoBehaviour
         //Setting the Button Active to false
         CookingGameButton.gameObject.SetActive(false);
     }
+
+    /****************************************************
+    *Function: Update
+    *
+    *Description: Checks if stove is touched every frame. 
+    *Then if e is pressed re-enable Ui elements
+    *
+    *Inputs: Player Input - Player presses E.
+    *
+    *Outputs: The Ui elements will appear.
+    * 
+    ****************************************************/
 
     // Update is called once per frame
     void Update()
@@ -44,6 +69,17 @@ public class CookingStationIntrractScript : MonoBehaviour
             }
         }
     }
+    /****************************************************
+    *Function: OnTriggerEnter2D
+    *
+    *Description: When the player enters the stove it will set the bool StoveIsTouched true.
+    *
+    *Inputs: Player Interaction- When the player enteres the trigger area then it ill 
+    *function.
+    *
+    *Outputs: Setting the StoveIsTouched Bool true.
+    * 
+    ****************************************************/
     //Checking if player has entered trigger
     private void OnTriggerEnter2D(Collider2D collision)
     {
