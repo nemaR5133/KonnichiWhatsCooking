@@ -59,14 +59,22 @@ public class CookingStationIntrractScript : MonoBehaviour
         if (StoveIsTouched == true)
         {
 
-        //Checking if E has been pressed.
-        if (Input.GetKeyDown(KeyCode.E))
+            //Checking if E has been pressed.
+            if (Input.GetKeyDown(KeyCode.E))
             {
-            //Setting the image Active to true
-            CookingGameImage.gameObject.SetActive(true);
-            //Setting the Button Active to true
-            CookingGameButton.gameObject.SetActive(true);
+                //Setting the image Active to true
+                CookingGameImage.gameObject.SetActive(true);
+                //Setting the Button Active to true
+                CookingGameButton.gameObject.SetActive(true);
             }
+        }
+        // If TimesButtonPressedVauleSaved = 0 then turn off the UI
+        if (QuickTimeEventPlayOne.TimesButtonPressedVauleSaved == 0)
+        {
+            //Setting the image Active to false
+            CookingGameImage.gameObject.SetActive(false);
+            //Setting the Button Active to false
+            CookingGameButton.gameObject.SetActive(false);
         }
     }
     /****************************************************
@@ -88,6 +96,18 @@ public class CookingStationIntrractScript : MonoBehaviour
         {
             //Setting the stove being touched to true
             StoveIsTouched = true;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.tag == "StoveGame")
+        {
+
+            if (QuickTimeEventPlayOne.TimesButtonPressedVauleSaved == 0)
+            {
+                QuickTimeEventPlayOne.TimesButtonPressedVauleSaved = QuickTimeEventPlayOne.OriginalVauleSaved;
+            }
         }
     }
 }

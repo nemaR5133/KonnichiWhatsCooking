@@ -702,8 +702,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63e246df79f57ea40a8c66e6e3a106bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PopUp: {fileID: 0}
-  CratePopPos: {fileID: 0}
+  PopUp1: {fileID: 5197447579701050037, guid: d83eca27287cb0145a942e9eccecb487, type: 3}
+  CratePopPos1: {fileID: 41494487}
   PopUp1Colne: {fileID: 0}
 --- !u!114 &1026932845
 MonoBehaviour:
@@ -1297,7 +1297,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1590990184}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1923571830}
+        m_TargetAssemblyTypeName: QuickTimeEventPlayOne, Assembly-CSharp
+        m_MethodName: PressTheButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1590990184
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1708,6 +1720,51 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1923571828
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1923571829}
+  - component: {fileID: 1923571830}
+  m_Layer: 0
+  m_Name: QuickTimeEventManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1923571829
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1923571828}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.9325724, y: -0.67789733, z: 0.05944563}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1923571830
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1923571828}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3c4fac1ef3d6164aa0677a40b9d6157, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TimesButtonPressed: 5
 --- !u!1 &1965073826
 GameObject:
   m_ObjectHideFlags: 0
@@ -2065,3 +2122,4 @@ SceneRoots:
   - {fileID: 1772621623}
   - {fileID: 1836733675}
   - {fileID: 548734072}
+  - {fileID: 1923571829}
