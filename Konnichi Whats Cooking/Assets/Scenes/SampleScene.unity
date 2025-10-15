@@ -572,7 +572,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6883487532953903956, guid: 8676fb30c7ab4c44ca7d701011d0910c, type: 3}
       propertyPath: m_TagString
-      value: UncutMochi
+      value: UncatMochiCrate
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -943,6 +943,18 @@ MonoBehaviour:
   CookingGameImage: {fileID: 1456125032}
   CookingGameButton: {fileID: 1590990183}
   StoveIsTouched: 0
+--- !u!114 &1026932851
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1026932835}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b925eca89f63294b9d99b4821ffa177, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1283176843
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2239,6 +2251,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 9207242926286471227, guid: bd9aac554b2f6464fa3f06c11903b26c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1026932841}
+    - targetCorrespondingSourceObject: {fileID: 9207242926286471227, guid: bd9aac554b2f6464fa3f06c11903b26c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1026932851}
   m_SourcePrefab: {fileID: 100100000, guid: bd9aac554b2f6464fa3f06c11903b26c, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

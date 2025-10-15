@@ -2,45 +2,35 @@ using UnityEngine;
 
 public class PlayerPickUpScript : MonoBehaviour
 {
-    bool IsHoldingItem = false;
+    public static bool IsHoldingItem = false;
 
     //Ingredients 
-    bool UncookedRice;
-    bool CookedRice;
-    bool Bread;
-    bool Egg;
-    bool Vegitible;
-    bool Seaweed;
-    bool Fish;
-    bool UncutMochi;
+    public static bool UncookedRice;
+    public static bool CookedRice;
+    public static bool Bread;
+    public static bool Egg;
+    public static bool Vegitible;
+    public static bool Seaweed;
+    public static bool Fish;
+    public static bool UncutMochi;
 
     //Dishes
-    bool Okonomiyaki;
-    bool Mochi;
-    bool Onigiri;
-    bool TamagoSando;
-    bool MisoSoup;
-    bool WakameSalad;
+    public static bool Okonomiyaki;
+    public static bool Mochi;
+    public static bool Onigiri;
+    public static bool TamagoSando;
+    public static bool MisoSoup;
+    public static bool WakameSalad;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    private void OnTriggerStay2D(Collider2D collision)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        //If the E key is pressed
-        if (Input.GetKeyDown(KeyCode.E))
-        {
+            //If the E key is pressed
+            if (Input.GetKeyDown(KeyCode.E))
+            {
             //If player is not holding item.
             if (IsHoldingItem == false)
             {
+            
                 //Gets the Uncooked rice
                 if (collision.tag == "UncookedRiceCrate")
                 {
