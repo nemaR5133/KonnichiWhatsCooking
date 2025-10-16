@@ -98,16 +98,21 @@ public class CookingStationIntrractScript : MonoBehaviour
             StoveIsTouched = true;
         }
     }
-
+    //WHen the quick time is exited
     private void OnTriggerExit2D(Collider2D collision)
-    {
+    { 
+        //IF the collsion is STOVEGAME
         if (collision.tag == "StoveGame")
         {
+            //When the button is pressed enogh times & player has exited
 
             if (QuickTimeEventPlayOne.TimesButtonPressedVauleSaved == 0)
             {
+                //Then when they leave the vaule will be reset
                 QuickTimeEventPlayOne.TimesButtonPressedVauleSaved = QuickTimeEventPlayOne.OriginalVauleSaved;
             }
+            //They are not touching the stove.
+            StoveIsTouched = false;
         }
     }
 }

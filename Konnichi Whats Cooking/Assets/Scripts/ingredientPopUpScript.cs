@@ -12,9 +12,9 @@ public class ingredientPopUpScript : MonoBehaviour
 {
 
     //The First Pop Up
-    public GameObject PopUp1;
+    public GameObject PopUp;
     //The position obove Crate
-    public GameObject CratePopPos1;
+    public GameObject CratePopPos;
     //Clone Of Pop Up
     public GameObject PopUp1Colne;
     //Checks if the era has been enter.
@@ -40,12 +40,12 @@ public class ingredientPopUpScript : MonoBehaviour
             {
 
                 //Checks tag of trigger if it is "ingredientPopUp" then create the pop up
-                if (collision.tag == "ingredientPopUp")
+                if (collision.tag == "Player")
                 {
                     //Sets the PopUp Position to the create.
-                    PopUp1.transform.position = CratePopPos1.transform.position;
+                    PopUp.transform.position = CratePopPos.transform.position;
                     //Make Pop up clone 
-                    PopUp1Colne = Instantiate(PopUp1);
+                    PopUp1Colne = Instantiate(PopUp);
                     //Tells the bool player has entered
                     CrateEntered = true;
                 }
@@ -66,13 +66,13 @@ public class ingredientPopUpScript : MonoBehaviour
      * 
      ****************************************************/
     //Checks if trigger has been exited
-    private void OnTriggerExit2D(Collider2D collision2)
+    private void OnTriggerExit2D(Collider2D collision)
     {
         //Checks if player is in Crte Area
         if (CrateEntered == true)
         {
             //Checks tag
-            if (collision2.tag == "ingredientPopUp")
+            if (collision.tag == "Player")
             {
                 //Destroys pop up clone
                 Object.Destroy(PopUp1Colne);

@@ -369,6 +369,7 @@ GameObject:
   - component: {fileID: 4991840910982887754}
   - component: {fileID: 1452643291306107462}
   - component: {fileID: 8229807814313672319}
+  - component: {fileID: 5753855163286229855}
   m_Layer: 0
   m_Name: IngredentCrateColliderPopUp
   m_TagString: ingredientPopUp
@@ -492,3 +493,18 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &5753855163286229855
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8833673835829148504}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63e246df79f57ea40a8c66e6e3a106bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PopUp: {fileID: 5197447579701050037, guid: d83eca27287cb0145a942e9eccecb487, type: 3}
+  CratePopPos: {fileID: 799066618732520829}
+  PopUp1Colne: {fileID: 0}
