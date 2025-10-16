@@ -13,6 +13,8 @@ public class PlayerPickUpScript : MonoBehaviour
     public static bool Seaweed;
     public static bool Fish;
     public static bool UncutMochi;
+    public static bool Batter;
+
 
     //Dishes
     public static bool Okonomiyaki;
@@ -21,6 +23,11 @@ public class PlayerPickUpScript : MonoBehaviour
     public static bool TamagoSando;
     public static bool MisoSoup;
     public static bool WakameSalad;
+    public static bool PanCakaki;
+
+    //The Ingredents cooked
+    public static bool EggIsCooked;
+    public static bool VegitibleIsCooked;
 
     private void OnTriggerStay2D(Collider2D collision)
     {
