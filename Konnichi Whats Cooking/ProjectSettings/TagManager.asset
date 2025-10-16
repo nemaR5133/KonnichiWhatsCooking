@@ -14,6 +14,8 @@ TagManager:
   - FishCrate
   - UncutMochi
   - UncatMochiCrate
+  - MixingGame
+  - MixingGameCirlce
   layers:
   - Default
   - TransparentFX
