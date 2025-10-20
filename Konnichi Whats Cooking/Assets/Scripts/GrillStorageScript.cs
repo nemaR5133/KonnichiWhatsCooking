@@ -18,6 +18,9 @@ public class GrillStorageScript : MonoBehaviour
     public float EggTimer;
     public float UncookedRiceTimer;
     public float Vegitible;
+    bool OkonomiyakiIsCooking1 = false;
+    bool OkonomiyakiIsCooking2 = false;
+    bool OkonomiyakiIsCooking3 = false;
     //bATTTER RICE VEGIITABLES
 
     // Update is called once per frame
@@ -67,45 +70,85 @@ public class GrillStorageScript : MonoBehaviour
                 //Check if food in slot 1 is done
                 if (foodIsDone1 == true)
                 {
-                    //If it is batter
-                    if (GrillSlot1Vaule == 1)
+                    if(OkonomiyakiIsCooking1 == false)
                     {
-                        PlayerPickUpScript.Pankeeki = true;
+                     if (GrillSlot1Vaule == 1)
+                      {
+                       PlayerPickUpScript.Pankeeki = true;
+                       }
                     }
+                    if (OkonomiyakiIsCooking1 == true)
+                    {
+                    //If it is batter
                     if (GrillSlot1Vaule == 1 && GrillSlot2Vaule == 4 || (GrillSlot1Vaule == 1 && GrillSlot3Vaule == 4))
                     {
                         PlayerPickUpScript.Okonomiyaki = true;
                     }
-
-
+                    }
                 }
-                //Check if food in slot 2 is done
-                else if (foodIsDone2 == true)
+                //Check if food in slot 1 is done
+                if (foodIsDone2 == true)
                 {
-                    if (GrillSlot2Vaule == 1)
+                    if (OkonomiyakiIsCooking2 == false)
                     {
-                        PlayerPickUpScript.Pankeeki = true;
+                        if (GrillSlot2Vaule == 1)
+                        {
+                            PlayerPickUpScript.Pankeeki = true;
+                        }
                     }
-                    if (GrillSlot2Vaule == 1 && GrillSlot1Vaule == 4 || (GrillSlot2Vaule == 1 && GrillSlot3Vaule == 4))
+                    if (OkonomiyakiIsCooking2 == true)
                     {
-                        PlayerPickUpScript.Okonomiyaki = true;
+                        //If it is batter
+                        if (GrillSlot2Vaule == 1 && GrillSlot1Vaule == 4 || (GrillSlot2Vaule == 1 && GrillSlot3Vaule == 4))
+                        {
+                            PlayerPickUpScript.Okonomiyaki = true;
+                        }
                     }
-   
-
                 }
-                //Check if food in slot 3 is done
-                else if (foodIsDone3 == true)
+                if (foodIsDone2 == false && PlayerPickUpScript.Vegitible == true)
                 {
-                    if (GrillSlot3Vaule == 1)
-                    {
-                        PlayerPickUpScript.Pankeeki = true;
-                    }
-                    if (GrillSlot3Vaule == 1 && GrillSlot1Vaule == 4 || (GrillSlot3Vaule == 1 && GrillSlot2Vaule == 4))
-                    {
-                        PlayerPickUpScript.Okonomiyaki = true;
-                    }
-
+                    OkonomiyakiIsCooking2 = true;
                 }
+
+                //Check if food in slot 1 is done
+                if (foodIsDone3 == true)
+                {
+                    if (OkonomiyakiIsCooking3 == false)
+                    {
+                        if (GrillSlot3Vaule == 1)
+                        {
+                            PlayerPickUpScript.Pankeeki = true;
+                        }
+                    }
+                    if (OkonomiyakiIsCooking3 == true)
+                    {
+                        //If it is batter
+                        if (GrillSlot3Vaule == 1 && GrillSlot1Vaule == 4 || (GrillSlot3Vaule == 1 && GrillSlot2Vaule == 4))
+                        {
+                            PlayerPickUpScript.Okonomiyaki = true;
+                        }
+                    }
+                }
+                if (foodIsDone2 == false && PlayerPickUpScript.Vegitible == true)
+                {
+                    OkonomiyakiIsCooking2 = true;
+                }
+
+                if (GrillSlot1Vaule == 2)
+                {
+                    PlayerPickUpScript.EggIsCooked = true;
+                }
+
+                if (GrillSlot2Vaule == 2)
+                {
+                    PlayerPickUpScript.EggIsCooked = true;
+                }
+
+                if (GrillSlot3Vaule == 2)
+                {
+                    PlayerPickUpScript.EggIsCooked = true;
+                }
+
             }
 
                 if (collision.tag == "Grill")
@@ -212,14 +255,7 @@ public class GrillStorageScript : MonoBehaviour
                                     GrillTimer3 = EggTimer;
                                     foodIsDone3 = false;
                                     }
-                                //If it is Uncooked Rice set to 3
-                                else if (PlayerPickUpScript.UncookedRice == true)
-                                {
-                                    GrillSlot3Vaule = 3;
-                                    GrillSlot3 = true;
-                                    GrillTimer3 = UncookedRiceTimer;
-                                    foodIsDone3 = false;
-                                    }
+    
                                 //If it is Uncooked Rice set to 4
                                 else if (PlayerPickUpScript.Vegitible == true)
                                 {
