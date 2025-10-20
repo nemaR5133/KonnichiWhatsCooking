@@ -93,6 +93,7 @@ GameObject:
   - component: {fileID: 12683127761659819}
   - component: {fileID: 6494151487056587828}
   - component: {fileID: 4721256901881933696}
+  - component: {fileID: -2962898873062860536}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -186,6 +187,8 @@ MonoBehaviour:
   CookingGameImage: {fileID: 0}
   CookingGameButton: {fileID: 0}
   StoveIsTouched: 0
+  CounterIsTouched: 0
+  MixingCirlce: {fileID: 0}
 --- !u!114 &572560348029527077
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -284,3 +287,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b925eca89f63294b9d99b4821ffa177, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-2962898873062860536
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9207242926286471227}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56e62dbc68912444d9eb84ecd9daa307, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  handsFull: 0
+  player: {fileID: 9207242926286471227}
+  egg: {fileID: 7571787489208820280, guid: 4a3de383ef588a04fa73722425dc2b9d, type: 3}
