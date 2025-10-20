@@ -22,6 +22,7 @@ public class CookingStationIntrractScript : MonoBehaviour
     public bool StoveIsTouched = false;
     public bool CounterIsTouched = false;
     public GameObject MixingCirlce;
+    int MixingCounter = 0;
 
     /****************************************************
     *Function: Start
@@ -40,6 +41,7 @@ public class CookingStationIntrractScript : MonoBehaviour
         CookingGameImage.gameObject.SetActive(false);
         //Setting the Button Active to false
         CookingGameButton.gameObject.SetActive(false);
+
     }
 
     /****************************************************
@@ -78,6 +80,20 @@ public class CookingStationIntrractScript : MonoBehaviour
             //Setting the Button Active to false
             CookingGameButton.gameObject.SetActive(false);
         }
+        if (CounterIsTouched == true)
+        {
+
+            //Checking if E has been pressed.
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                MixingCirlce.gameObject.SetActive(true);
+            }
+        }
+        if (MixingCounter >= 4)
+        {
+            MixingCounter = 0;
+            MixingCirlce.gameObject.SetActive(false);
+        }
     }
     /****************************************************
     *Function: OnTriggerEnter2D
@@ -99,8 +115,10 @@ public class CookingStationIntrractScript : MonoBehaviour
             //Setting the stove being touched to true
             StoveIsTouched = true;
         }
-        if (collision.CompareTag("MixingGame"))
+        if (collision.tag == "MixingGame")
         {
+            //trigger mixing event//
+            //Activates the circles which will detect if the mouse is colliding with them. The player has to collide with all of them to complete the event//
             CounterIsTouched = true;
         }
     }
@@ -122,12 +140,17 @@ public class CookingStationIntrractScript : MonoBehaviour
         }
         if (collision.CompareTag("MixingGame"))
         {
-            //trigger mixing event//
-            //Activates the circles which will detect if the mouse is colliding with them. The player has to collide with all of them to complete the event//
-            MixingCirlce.gameObject.SetActive(true);
-            
-           
+
+
+            CounterIsTouched = false;
+
         }
-        CounterIsTouched = false;
+        
+
+
+    }
+    public void MixCircleHit()
+    {
+        MixingCounter += 1;
     }
 }

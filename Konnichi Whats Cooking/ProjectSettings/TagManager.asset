@@ -16,6 +16,14 @@ TagManager:
   - UncatMochiCrate
   - MixingGame
   - MixingGameCirlce
+<<<<<<< HEAD
+  - MousePointer
+=======
+  - Grill
+  - RiceCooker
+  - ChoppingGame
+  - Bell
+>>>>>>> 51640ea610b10b745efda89839f96b6974c21184
   layers:
   - Default
   - TransparentFX

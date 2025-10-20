@@ -22,11 +22,15 @@ public class PlayerPickUpScript : MonoBehaviour
     public static bool Onigiri;
     public static bool TamagoSando;
     public static bool WakameSalad;
-    public static bool PanCakaki;
+    public static bool Pankeeki;
 
     //The Ingredents cooked
     public static bool EggIsCooked;
     public static bool VegitibleIsCooked;
+
+    //Food is chopped
+    bool CookedMochiIsChopped = false;
+    bool vegiIsChopped = false;
 
     private void OnTriggerStay2D(Collider2D collision)
     {
