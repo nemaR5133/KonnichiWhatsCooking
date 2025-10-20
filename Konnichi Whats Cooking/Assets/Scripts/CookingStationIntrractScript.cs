@@ -20,6 +20,8 @@ public class CookingStationIntrractScript : MonoBehaviour
     public Button CookingGameButton;
     //The Stove has not been touched check
     public bool StoveIsTouched = false;
+    public bool CounterIsTouched = false;
+    public GameObject MixingCirlce;
 
     /****************************************************
     *Function: Start
@@ -97,6 +99,10 @@ public class CookingStationIntrractScript : MonoBehaviour
             //Setting the stove being touched to true
             StoveIsTouched = true;
         }
+        if (collision.CompareTag("MixingGame"))
+        {
+            CounterIsTouched = true;
+        }
     }
     //WHen the quick time is exited
     private void OnTriggerExit2D(Collider2D collision)
@@ -114,5 +120,14 @@ public class CookingStationIntrractScript : MonoBehaviour
             //They are not touching the stove.
             StoveIsTouched = false;
         }
+        if (collision.CompareTag("MixingGame"))
+        {
+            //trigger mixing event//
+            //Activates the circles which will detect if the mouse is colliding with them. The player has to collide with all of them to complete the event//
+            MixingCirlce.gameObject.SetActive(true);
+            
+           
+        }
+        CounterIsTouched = false;
     }
 }
