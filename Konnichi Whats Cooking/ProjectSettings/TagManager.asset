@@ -16,6 +16,8 @@ TagManager:
   - UncatMochiCrate
   - MixingGame
   - MixingGameCirlce
+  - Grill
+  - RiceCooker
   layers:
   - Default
   - TransparentFX

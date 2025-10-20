@@ -19,11 +19,6 @@ public class GrillStorageScript : MonoBehaviour
     public float UncookedRiceTimer;
     public float Vegitible;
     //bATTTER RICE VEGIITABLES
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()
@@ -64,197 +59,182 @@ public class GrillStorageScript : MonoBehaviour
     //Checks if player is on the trigger
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (collision.tag == "Grill")
         {
-            if (foodIsDone1 == true)
+    //When E Is pressed
+            if (Input.GetKeyDown(KeyCode.E))
             {
-                if (GrillSlot1Vaule == 1)
+                //Check if food in slot 1 is done
+                if (foodIsDone1 == true)
                 {
-                    PlayerPickUpScript.Pankeeki = true;
-                }
-                if (GrillSlot1Vaule == 1 && GrillSlot2Vaule == 4 || (GrillSlot1Vaule == 1 && GrillSlot3Vaule == 4))
-                {
-                    PlayerPickUpScript.Okonomiyaki = true;
-                }
-                if (GrillSlot1Vaule == 3)
-                {
-                    PlayerPickUpScript.CookedRice = true;
-                }
-
-            }
-            else if (foodIsDone2 == true)
-            {
-                if (GrillSlot2Vaule == 1)
-                {
-                    PlayerPickUpScript.Pankeeki = true;
-                }
-                if (GrillSlot2Vaule == 1 && GrillSlot1Vaule == 4 || (GrillSlot2Vaule == 1 && GrillSlot3Vaule == 4))
-                {
-                    PlayerPickUpScript.Okonomiyaki = true;
-                }
-                if (GrillSlot2Vaule == 3)
-                {
-                    PlayerPickUpScript.CookedRice = true;
-                }
-
-            }
-            else if (foodIsDone3 == true)
-            {
-                if (GrillSlot3Vaule == 1)
-                {
-                    PlayerPickUpScript.Pankeeki = true;
-                }
-                if (GrillSlot3Vaule == 1 && GrillSlot1Vaule == 4 || (GrillSlot3Vaule == 1 && GrillSlot2Vaule == 4))
-                {
-                    PlayerPickUpScript.Okonomiyaki = true;
-                }
-                if (GrillSlot3Vaule == 3)
-                {
-                    PlayerPickUpScript.CookedRice = true;
-                }
-                if (GrillSlot3Vaule == 4)
-                {
-
-                }
-            }
-        }
-
-            if (collision.tag == "Grill")
-        {
-//Checks if player is holding item
-        if (PlayerPickUpScript.IsHoldingItem == true)
-        {
-            //Checks if player presses E
-        if (Input.GetKeyDown(KeyCode.E))
-                {
-                //If this grill slot is false
-                    if( GrillSlot1 == false)
+                    //If it is batter
+                    if (GrillSlot1Vaule == 1)
                     {
-                        //If the player is holding an item
-                        if (PlayerPickUpScript.IsHoldingItem == true)
-                        {
-                        //If it is batter set to 1
-                            if (PlayerPickUpScript.Batter == true)
-                            {
-                                GrillSlot1Vaule = 1;
-                                GrillSlot1 = true;
-                                GrillTimer1 = BatterTimer;
-                                foodIsDone1 = false;
-                            }
-                            //If it is egg set to 2
-                             else if (PlayerPickUpScript.Egg == true)
-                             {
-                                GrillSlot1Vaule = 2;
-                                GrillSlot1 = true;
-                                GrillTimer1 = EggTimer;
-                                foodIsDone1 = false;
-                            }
-                            //If it is Uncooked Rice set to 3
-                            else if (PlayerPickUpScript.UncookedRice == true)
-                            {
-                                GrillSlot1Vaule = 3;
-                                GrillSlot1 = true;
-                                GrillTimer1 = UncookedRiceTimer;
-                                foodIsDone1 = false;
-                            }
-                        //If it is Uncooked Rice set to 4
-                        else if (PlayerPickUpScript.Vegitible == true)
-                            {
-                                GrillSlot1Vaule = 4;
-                                GrillSlot1 = true;
-                                GrillTimer1 = Vegitible;
-                                foodIsDone1 = false;
-                            }
-                        }
+                        PlayerPickUpScript.Pankeeki = true;
                     }
-                    //If this grill slot is false
-                    else if ( GrillSlot2 == false)
+                    if (GrillSlot1Vaule == 1 && GrillSlot2Vaule == 4 || (GrillSlot1Vaule == 1 && GrillSlot3Vaule == 4))
                     {
-                    //If the player is holding an item
-                    if (PlayerPickUpScript.IsHoldingItem == true)
-                        {
-                        //If it is batter set to 1
-                            if (PlayerPickUpScript.Batter == true)
-                            {
-                                GrillSlot2Vaule = 1;
-                                GrillSlot2 = true;
-                                GrillTimer2 = BatterTimer;
-                                foodIsDone2 = false;
-                            }
-                            //If it is egg set to 2
-                            else if (PlayerPickUpScript.Egg == true)
-                                {
-                                GrillSlot2Vaule = 2;
-                                GrillSlot2 = true;
-                                GrillTimer2 = EggTimer;
-                                foodIsDone2 = false;
-                            }
-                            //If it is Uncooked Rice set to 3
-                            else if (PlayerPickUpScript.UncookedRice == true)
-                                {
-                                    GrillSlot2Vaule = 3;
-                                    GrillSlot2 = true;
-                                     GrillTimer2 = UncookedRiceTimer;
-                                    foodIsDone2 = false;
-                            }
-                        //If it is Uncooked Rice set to 4
-                        else if (PlayerPickUpScript.Vegitible == true)
-                            {
-                                GrillSlot2Vaule = 4;
-                                GrillSlot2 = true;
-                                GrillTimer2 = Vegitible;
-                                foodIsDone2 = false;
-                            }
-                        }
+                        PlayerPickUpScript.Okonomiyaki = true;
                     }
+
+
+                }
+                //Check if food in slot 2 is done
+                else if (foodIsDone2 == true)
+                {
+                    if (GrillSlot2Vaule == 1)
+                    {
+                        PlayerPickUpScript.Pankeeki = true;
+                    }
+                    if (GrillSlot2Vaule == 1 && GrillSlot1Vaule == 4 || (GrillSlot2Vaule == 1 && GrillSlot3Vaule == 4))
+                    {
+                        PlayerPickUpScript.Okonomiyaki = true;
+                    }
+   
+
+                }
+                //Check if food in slot 3 is done
+                else if (foodIsDone3 == true)
+                {
+                    if (GrillSlot3Vaule == 1)
+                    {
+                        PlayerPickUpScript.Pankeeki = true;
+                    }
+                    if (GrillSlot3Vaule == 1 && GrillSlot1Vaule == 4 || (GrillSlot3Vaule == 1 && GrillSlot2Vaule == 4))
+                    {
+                        PlayerPickUpScript.Okonomiyaki = true;
+                    }
+
+                }
+            }
+
+                if (collision.tag == "Grill")
+            {
+    //Checks if player is holding item
+            if (PlayerPickUpScript.IsHoldingItem == true)
+            {
+                //Checks if player presses E
+            if (Input.GetKeyDown(KeyCode.E))
+                    {
                     //If this grill slot is false
-                    else if (GrillSlot3 == false)
-                    {
-                    {
-                        //If the player is holding an item
-                        if (PlayerPickUpScript.IsHoldingItem == true)
+                        if( GrillSlot1 == false)
                         {
+                            //If the player is holding an item
+                            if (PlayerPickUpScript.IsHoldingItem == true)
+                            {
                             //If it is batter set to 1
-                            if (PlayerPickUpScript.Batter == true)
-                            {
-                                GrillSlot3Vaule = 1;
-                                GrillSlot3 = true;
-                                GrillTimer3 = BatterTimer;
-                                foodIsDone3 = false;
+                                if (PlayerPickUpScript.Batter == true)
+                                {
+                                    GrillSlot1Vaule = 1;
+                                    GrillSlot1 = true;
+                                    GrillTimer1 = BatterTimer;
+                                    foodIsDone1 = false;
                                 }
-                            //If it is egg set to 2
-                            else if (PlayerPickUpScript.Egg == true)
-                            {
-                                GrillSlot3Vaule = 2;
-                                GrillSlot3 = true;
-                                GrillTimer3 = EggTimer;
-                                foodIsDone3 = false;
+                                //If it is egg set to 2
+                                 else if (PlayerPickUpScript.Egg == true)
+                                 {
+                                    GrillSlot1Vaule = 2;
+                                    GrillSlot1 = true;
+                                    GrillTimer1 = EggTimer;
+                                    foodIsDone1 = false;
                                 }
-                            //If it is Uncooked Rice set to 3
-                            else if (PlayerPickUpScript.UncookedRice == true)
+
+                            //If it is Uncooked Rice set to 4
+                            else if (PlayerPickUpScript.Vegitible == true)
+                                {
+                                    GrillSlot1Vaule = 4;
+                                    GrillSlot1 = true;
+                                    GrillTimer1 = Vegitible;
+                                    foodIsDone1 = false;
+                                }
+                            }
+                        }
+                        //If this grill slot is false
+                        else if ( GrillSlot2 == false)
+                        {
+                        //If the player is holding an item
+                        if (PlayerPickUpScript.IsHoldingItem == true)
                             {
-                                GrillSlot3Vaule = 3;
-                                GrillSlot3 = true;
-                                GrillTimer3 = UncookedRiceTimer;
-                                foodIsDone3 = false;
+                            //If it is batter set to 1
+                                if (PlayerPickUpScript.Batter == true)
+                                {
+                                    GrillSlot2Vaule = 1;
+                                    GrillSlot2 = true;
+                                    GrillTimer2 = BatterTimer;
+                                    foodIsDone2 = false;
+                                }
+                                //If it is egg set to 2
+                                else if (PlayerPickUpScript.Egg == true)
+                                    {
+                                    GrillSlot2Vaule = 2;
+                                    GrillSlot2 = true;
+                                    GrillTimer2 = EggTimer;
+                                    foodIsDone2 = false;
+                                }
+                                //If it is Uncooked Rice set to 3
+                                else if (PlayerPickUpScript.UncookedRice == true)
+                                    {
+                                        GrillSlot2Vaule = 3;
+                                        GrillSlot2 = true;
+                                         GrillTimer2 = UncookedRiceTimer;
+                                        foodIsDone2 = false;
                                 }
                             //If it is Uncooked Rice set to 4
                             else if (PlayerPickUpScript.Vegitible == true)
-                            {
-                                GrillSlot3Vaule = 4;
-                                    GrillSlot3 = true;
-                                    GrillTimer3 = Vegitible;
-                                    foodIsDone3 = false;
+                                {
+                                    GrillSlot2Vaule = 4;
+                                    GrillSlot2 = true;
+                                    GrillTimer2 = Vegitible;
+                                    foodIsDone2 = false;
                                 }
+                            }
+                        }
+                        //If this grill slot is false
+                        else if (GrillSlot3 == false)
+                        {
+                        {
+                            //If the player is holding an item
+                            if (PlayerPickUpScript.IsHoldingItem == true)
+                            {
+                                //If it is batter set to 1
+                                if (PlayerPickUpScript.Batter == true)
+                                {
+                                    GrillSlot3Vaule = 1;
+                                    GrillSlot3 = true;
+                                    GrillTimer3 = BatterTimer;
+                                    foodIsDone3 = false;
+                                    }
+                                //If it is egg set to 2
+                                else if (PlayerPickUpScript.Egg == true)
+                                {
+                                    GrillSlot3Vaule = 2;
+                                    GrillSlot3 = true;
+                                    GrillTimer3 = EggTimer;
+                                    foodIsDone3 = false;
+                                    }
+                                //If it is Uncooked Rice set to 3
+                                else if (PlayerPickUpScript.UncookedRice == true)
+                                {
+                                    GrillSlot3Vaule = 3;
+                                    GrillSlot3 = true;
+                                    GrillTimer3 = UncookedRiceTimer;
+                                    foodIsDone3 = false;
+                                    }
+                                //If it is Uncooked Rice set to 4
+                                else if (PlayerPickUpScript.Vegitible == true)
+                                {
+                                    GrillSlot3Vaule = 4;
+                                        GrillSlot3 = true;
+                                        GrillTimer3 = Vegitible;
+                                        foodIsDone3 = false;
+                                    }
+                            }
                         }
                     }
+                    }
                 }
-                }
-            }
         }
         }
-
-
-        
-        
+        }
+  
 }
