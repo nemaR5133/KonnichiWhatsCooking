@@ -22,7 +22,7 @@ public class PlayerPickUpScript : MonoBehaviour
     public static bool Onigiri;
     public static bool TamagoSando;
     public static bool WakameSalad;
-    public static bool PanCakaki;
+    public static bool Pankeeki;
 
     //The Ingredents cooked
     public static bool EggIsCooked;

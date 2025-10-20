@@ -28,29 +28,36 @@ public class GrillStorageScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //All the timers for the grill slots
         if (GrillSlot1 == true)
         {
+            //Subtracts from the vaule by delta time
             GrillTimer1 -= Time.deltaTime;
         }
         if (GrillSlot2 == true)
         {
+            //Subtracts from the vaule by delta time
             GrillTimer2 -= Time.deltaTime;
         }
         if (GrillSlot3 == true)
         {
+            //Subtracts from the vaule by delta time
             GrillTimer3 -= Time.deltaTime;
         }
-
+        //When the Grill timer is zero
         if (GrillTimer1 == 0)
         {
+            //The food timer in grill slot 1 is done.
             foodIsDone1 = true;
         }
         if (GrillTimer2 == 0)
         {
+            //The food timer in grill slot 2 is done.
             foodIsDone2 = true;
         }
         if (GrillTimer3 == 0)
         {
+            //The food timer in grill slot 3 is done.
             foodIsDone3 = true;
         }
     }
@@ -61,18 +68,54 @@ public class GrillStorageScript : MonoBehaviour
         {
             if (foodIsDone1 == true)
             {
-                if ()
+                if (GrillSlot1Vaule == 1)
+                {
+                    PlayerPickUpScript.Pankeeki = true;
+                }
+                if (GrillSlot1Vaule == 1 && GrillSlot2Vaule == 4 || (GrillSlot1Vaule == 1 && GrillSlot3Vaule == 4))
+                {
+                    PlayerPickUpScript.Okonomiyaki = true;
+                }
+                if (GrillSlot1Vaule == 3)
+                {
+                    PlayerPickUpScript.CookedRice = true;
+                }
+
+            }
+            else if (foodIsDone2 == true)
+            {
+                if (GrillSlot2Vaule == 1)
+                {
+                    PlayerPickUpScript.Pankeeki = true;
+                }
+                if (GrillSlot2Vaule == 1 && GrillSlot1Vaule == 4 || (GrillSlot2Vaule == 1 && GrillSlot3Vaule == 4))
+                {
+                    PlayerPickUpScript.Okonomiyaki = true;
+                }
+                if (GrillSlot2Vaule == 3)
+                {
+                    PlayerPickUpScript.CookedRice = true;
+                }
+
+            }
+            else if (foodIsDone3 == true)
+            {
+                if (GrillSlot3Vaule == 1)
+                {
+                    PlayerPickUpScript.Pankeeki = true;
+                }
+                if (GrillSlot3Vaule == 1 && GrillSlot1Vaule == 4 || (GrillSlot3Vaule == 1 && GrillSlot2Vaule == 4))
+                {
+                    PlayerPickUpScript.Okonomiyaki = true;
+                }
+                if (GrillSlot3Vaule == 3)
+                {
+                    PlayerPickUpScript.CookedRice = true;
+                }
+                if (GrillSlot3Vaule == 4)
                 {
 
                 }
-            }
-            if (foodIsDone2 == true)
-            {
-
-            }
-            if (foodIsDone3 == true)
-            {
-
             }
         }
 
