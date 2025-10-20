@@ -18,6 +18,7 @@ TagManager:
   - MixingGameCirlce
   - Grill
   - RiceCooker
+  - ChoppingGame
   layers:
   - Default
   - TransparentFX

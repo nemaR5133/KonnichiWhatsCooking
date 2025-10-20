@@ -28,6 +28,10 @@ public class PlayerPickUpScript : MonoBehaviour
     public static bool EggIsCooked;
     public static bool VegitibleIsCooked;
 
+    //Food is chopped
+    bool CookedMochiIsChopped = false;
+    bool vegiIsChopped = false;
+
     private void OnTriggerStay2D(Collider2D collision)
     {
             //If the E key is pressed
