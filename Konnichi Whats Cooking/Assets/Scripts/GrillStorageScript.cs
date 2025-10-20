@@ -86,6 +86,7 @@ public class GrillStorageScript : MonoBehaviour
                     }
                     }
                 }
+
                 //Check if food in slot 1 is done
                 if (foodIsDone2 == true)
                 {
@@ -105,6 +106,8 @@ public class GrillStorageScript : MonoBehaviour
                         }
                     }
                 }
+                //Check if the timer is done to put in Vegis
+
                 if (foodIsDone2 == false && PlayerPickUpScript.Vegitible == true)
                 {
                     OkonomiyakiIsCooking2 = true;
@@ -129,11 +132,12 @@ public class GrillStorageScript : MonoBehaviour
                         }
                     }
                 }
+                //Check if the timer is done to put in Vegis
                 if (foodIsDone2 == false && PlayerPickUpScript.Vegitible == true)
                 {
                     OkonomiyakiIsCooking2 = true;
                 }
-
+                //Cooking eggs 
                 if (GrillSlot1Vaule == 2)
                 {
                     PlayerPickUpScript.EggIsCooked = true;

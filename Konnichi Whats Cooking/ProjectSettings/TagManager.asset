@@ -19,6 +19,7 @@ TagManager:
   - Grill
   - RiceCooker
   - ChoppingGame
+  - Bell
   layers:
   - Default
   - TransparentFX
