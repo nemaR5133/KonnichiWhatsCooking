@@ -3,7 +3,18 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 3
-  tags: []
+  tags:
+  - UncookedRiceCrate
+  - ingredientPopUp
+  - MixingGameCirlce
+  - SeaweedCrate
+  - VegitibleCrate
+  - BreadCrate
+  - EggCrate
+  - FishCrate
+  - UncatMochiCrate
+  - WaitressOrderCollider
+  - Bell
   layers:
   - Default
   - TransparentFX
