@@ -3,27 +3,7 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 3
-  tags:
-  - ingredientPopUp
-  - StoveGame
-  - UncookedRiceCrate
-  - BreadCrate
-  - EggCrate
-  - VegitibleCrate
-  - SeaweedCrate
-  - FishCrate
-  - UncutMochi
-  - UncatMochiCrate
-  - MixingGame
-  - MixingGameCirlce
-<<<<<<< HEAD
-  - MousePointer
-=======
-  - Grill
-  - RiceCooker
-  - ChoppingGame
-  - Bell
->>>>>>> 51640ea610b10b745efda89839f96b6974c21184
+  tags: []
   layers:
   - Default
   - TransparentFX

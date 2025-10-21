@@ -67,12 +67,12 @@ public class GrillStorageScript : MonoBehaviour
     //When E Is pressed
             if (Input.GetKeyDown(KeyCode.E))
             {
-<<<<<<< HEAD
                 //if ()
-=======
                 //Check if food in slot 1 is done
                 if (foodIsDone1 == true)
->>>>>>> 51640ea610b10b745efda89839f96b6974c21184
+
+                //Check if food in slot 1 is done
+                if (foodIsDone1 == true)
                 {
                     if(OkonomiyakiIsCooking1 == false)
                     {
