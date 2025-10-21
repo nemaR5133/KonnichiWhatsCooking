@@ -15,9 +15,9 @@ using UnityEngine.UI;
 public class CookingStationIntrractScript : MonoBehaviour
 {
     //This is the Image of the game
-    public Image CookingGameImage;
+    //public Image CookingGameImage;
     //Screen wide button for game
-    public Button CookingGameButton;
+    //public Button CookingGameButton;
     //The Stove has not been touched check
     public bool StoveIsTouched = false;
     public bool CounterIsTouched = false;
@@ -37,9 +37,9 @@ public class CookingStationIntrractScript : MonoBehaviour
     void Start()
     {
         //Setting the image Active to false
-        CookingGameImage.gameObject.SetActive(false);
+        //CookingGameImage.gameObject.SetActive(false);
         //Setting the Button Active to false
-        CookingGameButton.gameObject.SetActive(false);
+        //CookingGameButton.gameObject.SetActive(false);
     }
 
     /****************************************************
@@ -65,18 +65,18 @@ public class CookingStationIntrractScript : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.E))
             {
                 //Setting the image Active to true
-                CookingGameImage.gameObject.SetActive(true);
+                //CookingGameImage.gameObject.SetActive(true);
                 //Setting the Button Active to true
-                CookingGameButton.gameObject.SetActive(true);
+                //CookingGameButton.gameObject.SetActive(true);
             }
         }
         // If TimesButtonPressedVauleSaved = 0 then turn off the UI
         if (QuickTimeEventPlayOne.TimesButtonPressedVauleSaved == 0)
         {
             //Setting the image Active to false
-            CookingGameImage.gameObject.SetActive(false);
+            //CookingGameImage.gameObject.SetActive(false);
             //Setting the Button Active to false
-            CookingGameButton.gameObject.SetActive(false);
+            //CookingGameButton.gameObject.SetActive(false);
         }
     }
     /****************************************************
