@@ -130,9 +130,5 @@ public class Grabbable : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
 }
