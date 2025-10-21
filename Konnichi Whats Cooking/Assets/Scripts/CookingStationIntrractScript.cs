@@ -137,7 +137,7 @@ public class CookingStationIntrractScript : MonoBehaviour
             //They are not touching the stove.
             StoveIsTouched = false;
         }
-        if (collision.CompareTag("MixingGame"))
+        if (collision.CompareTag("MixingGameCirlce"))
         {
 
 

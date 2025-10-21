@@ -8,13 +8,16 @@ public class PickItUp : MonoBehaviour
     public GameObject player;
     // A test object I am using to check if the player can pick up objects
     public GameObject egg;
+    public GameObject counter;
     private bool pickUp;
+    private bool setDown;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         handsFull = false;
+
     }
 
     // When the player enters the collision of the ingredient crate
@@ -35,7 +38,22 @@ public class PickItUp : MonoBehaviour
                 }
             }
         }
+        if (handsFull == true)
+        {
+            if (setDown)
+            {
+                setDown = false;
+                if (collision.gameObject.CompareTag("Countertop"))
+                {
+                    GameObject clone = Instantiate(egg, counter.transform);
+                    handsFull = false;
+                    Destroy(clone);
+                }
+            }
+        }
     }
+
+
 
 
 
@@ -48,5 +66,10 @@ public class PickItUp : MonoBehaviour
         {
             pickUp = true; 
         }
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            setDown = true;
+        }
+
     }
 }
