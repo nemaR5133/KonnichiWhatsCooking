@@ -11,13 +11,13 @@ public class PickItUp : MonoBehaviour
     public GameObject counter;
     private bool pickUp;
     private bool setDown;
-
+    private GameObject clone;
+    public GameObject Place;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         handsFull = false;
-
     }
 
     // When the player enters the collision of the ingredient crate
@@ -33,7 +33,7 @@ public class PickItUp : MonoBehaviour
                 if (collision.gameObject.CompareTag("EggCrate"))
                 {
                     // Code instantiates a copy of the test object
-                    GameObject clone = Instantiate(egg, player.transform);
+                    clone = Instantiate(egg, player.transform);
                     handsFull = true;
                 }
             }
@@ -45,7 +45,8 @@ public class PickItUp : MonoBehaviour
                 setDown = false;
                 if (collision.gameObject.CompareTag("Countertop"))
                 {
-                    GameObject clone = Instantiate(egg, counter.transform);
+                    GameObject tableClone = Instantiate(egg, Place.transform);
+                    tableClone.transform.position = Place.transform.position;
                     handsFull = false;
                     Destroy(clone);
                 }
@@ -62,11 +63,11 @@ public class PickItUp : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.E) && handsFull == false)
         {
             pickUp = true; 
         }
-        if (Input.GetKeyDown(KeyCode.E))
+        else if (Input.GetKeyDown(KeyCode.E) && handsFull == true)
         {
             setDown = true;
         }
